@@ -6,11 +6,11 @@ const helmet = require ('helmet');
 
 const app = express();
 
-const morganOptions = process.env.NODE_ENV === 'production'
+const morganOption = process.env.NODE_ENV === 'production'
   ? 'common'
   : 'dev';
 
-app.use(morganOptions);
+app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
